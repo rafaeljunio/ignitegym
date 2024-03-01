@@ -1,6 +1,9 @@
 import { Text, View, StatusBar } from 'react-native';
+import { NativeBaseProvider } from 'native-base';
 import { Roboto_400Regular, Roboto_700Bold, useFonts } from '@expo-google-fonts/roboto'
-
+import { Loading } from '@components/Loading';
+import { THEME } from './src/theme';
+import { SignUp } from '@screens/SignUp';
 
 export default function App() {
 
@@ -10,7 +13,7 @@ export default function App() {
   })
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <NativeBaseProvider theme={THEME}>
       <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"
@@ -18,10 +21,10 @@ export default function App() {
       />
       {
         fontsLoaded ?
-          <Text style={{ fontFamily: 'Roboto_700Bold' }}> Open up 2 App.tsx to start working on your app!</Text >
+          <SignUp />
           :
-          <View />
+          <Loading />
       }
-    </View>
+    </NativeBaseProvider>
   );
 }
