@@ -6,6 +6,7 @@ import {
   useFonts,
 } from '@expo-google-fonts/roboto'
 import { Routes } from '@routes/index'
+import { Home } from '@screens/Home'
 import { NativeBaseProvider } from 'native-base'
 import { StatusBar } from 'react-native'
 
